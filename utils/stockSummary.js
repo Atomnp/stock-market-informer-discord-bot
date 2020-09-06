@@ -2,11 +2,9 @@ const Summmary = require("../modals/summary");
 const puppeteer = require("puppeteer");
 const summary = require("../modals/summary");
 
-exports.todaysSummary = () => {
+exports.todaysSummary = (page) => {
   (async () => {
     const url = "http://www.nepalstock.com/";
-    let browser = await puppeteer.launch();
-    let page = await browser.newPage();
     //to enable logging inside page.evaluate function
     page.on("console", (consoleObj) => console.log(consoleObj.text()));
     await page.goto(url, { waitUntil: "networkidle2" });

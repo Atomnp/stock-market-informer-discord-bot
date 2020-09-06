@@ -1,11 +1,9 @@
 const TopGainers = require("../modals/topGainers");
 const puppeteer = require("puppeteer");
 
-exports.todaysTopGainers = () => {
+exports.todaysTopGainers = (page) => {
   (async () => {
     const url = "http://www.nepalstock.com/";
-    let browser = await puppeteer.launch();
-    let page = await browser.newPage();
     //to enable logging inside page.evaluate function
     page.on("console", (consoleObj) => console.log(consoleObj.text()));
     await page.goto(url, { waitUntil: "networkidle2" });

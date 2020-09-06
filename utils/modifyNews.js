@@ -1,11 +1,9 @@
 const News = require("../modals/news");
 const puppeteer = require("puppeteer");
 
-exports.fetchAndSave = () => {
+exports.fetchAndSave = (page) => {
   (async () => {
     const url = "https://www.sharesansar.com/category/ipo-fpo-news";
-    let browser = await puppeteer.launch();
-    let page = await browser.newPage();
     await page.goto(url, { waitUntil: "networkidle2" });
 
     let data = await page.evaluate(() => {
