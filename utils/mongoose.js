@@ -17,7 +17,7 @@ module.exports = {
         fetchAndSave();
         todaysSummary();
         todaysTopGainers();
-      }, 5 * 60 * 1000);
+      }, 15 * 60 * 1000);
       todaysTopGainers();
     });
   },

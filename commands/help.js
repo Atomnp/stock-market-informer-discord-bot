@@ -9,7 +9,7 @@ module.exports = {
   execute: (message) => {
     let displayMessage = "*****You can Use following commands****\n";
     for (i in description) {
-      displayMessage += "! " + i + ": " + description[i] + "\n";
+      displayMessage += "!" + i + ": " + description[i] + "\n";
     }
     message.channel.send(`\`\`\`${displayMessage}\`\`\``);
   },
