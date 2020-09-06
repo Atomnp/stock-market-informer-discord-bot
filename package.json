@@ -1,13 +1,17 @@
 {
   "name": "discord-bot",
   "version": "1.0.0",
-  "description": "Discord bot for SitePoint",
+  "description": "Discord bot to provide info about nepali stock market",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "author": "Michiel Mulders",
+  "engines": {
+    "node": ">= 6.9.4",
+    "npm": ">= 4.4.0"
+  },
+  "author": "Aayush Neupane",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1",

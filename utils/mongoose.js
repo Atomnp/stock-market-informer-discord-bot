@@ -12,6 +12,12 @@ module.exports = {
     };
     mongoose.connect(process.env.MONGOOSE_URL, dbOptions).then(() => {
       console.log("conneted to mongoose sucessfully");
+
+      setTimeout(() => {
+        fetchAndSave();
+        todaysSummary();
+        todaysTopGainers();
+      }, 5 * 60 * 1000);
       todaysTopGainers();
     });
   },
