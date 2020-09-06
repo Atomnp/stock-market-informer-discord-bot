@@ -21,12 +21,20 @@ bot.on("ready", () => {
 });
 
 bot.on("message", (msg) => {
-  console.log("before executing");
+  const commandPrefix = "!stock";
+  msgArr = msg.content.split(" ");
+  console.log("msgarr", msgArr);
+  if (msgArr[0] !== commandPrefix && !msgArr[0].includes("`")) {
+    bot.commands.get("help").execute(msg);
+    return;
+  }
+  msg.content = msgArr[1];
+  console.log(console.log(msg.content), msg.content);
   if (msg.content === "help") {
     bot.commands.get("help").execute(msg);
   }
-  if (msg.content === "ipo") {
-    bot.commands.get("ipo").execute(msg);
+  if (msg.content === "news") {
+    bot.commands.get("news").execute(msg);
   }
   if (msg.content === "summary") {
     bot.commands.get("summary").execute(msg);

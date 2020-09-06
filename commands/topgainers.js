@@ -4,7 +4,12 @@ module.exports = {
   execute: (message) => {
     TopGainers.find().then((data) => {
       data = data[0].topGainers;
-      let displayMessage = "";
+      let displayMessage = "Symbols   \tLTP       \tPtChange  \t%Change";
+      displayMessage +=
+        "\n___________________________________________________________________________";
+      displayMessage +=
+        "\n---------------------------------------------------------------------------\n";
+
       data.forEach((topGainers) => {
         console.log("before all", topGainers);
         topGainers = topGainers.split("\t");
@@ -17,10 +22,6 @@ module.exports = {
           `${topGainers}\n___________________________________________________________________________\n`
         );
       });
-
-      message.channel.send(
-        `\`\`\`Symbols   \tLTP       \tPtChange  \t%Change   \`\`\``
-      );
       message.channel.send(`\`\`\`${displayMessage}\`\`\``);
     });
   },
