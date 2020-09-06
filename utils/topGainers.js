@@ -1,5 +1,5 @@
 const TopGainers = require("../modals/topGainers");
-const puppeteer = require("puppeteer");
+
 
 exports.todaysTopGainers = (page) => {
   (async () => {

@@ -1,6 +1,4 @@
-const Summmary = require("../modals/summary");
-const puppeteer = require("puppeteer");
-const summary = require("../modals/summary");
+const Summary = require("../modals/summary");
 
 exports.todaysSummary = (page) => {
   (async () => {
@@ -19,16 +17,16 @@ exports.todaysSummary = (page) => {
 
     console.log(todaysSummary);
 
-    Summmary.find()
+    Summary.find()
       .countDocuments()
       .then((count) => {
         console.log("count", count);
         if (count != 0) {
-          Summmary.remove({}, () => {
+          Summary.remove({}, () => {
             console.log("summary removed");
           });
         }
-        let summary = new Summmary({
+        let summary = new Summary({
           summary: todaysSummary,
         });
         summary.save().then((res) => {
